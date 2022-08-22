@@ -1,4 +1,4 @@
-####* Como rodar?
+#### Como rodar?
 
 ```
 chmod +x ./gerson.sh
