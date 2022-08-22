@@ -8,6 +8,7 @@ chmod +x ./gerson.sh
 #### Esse programinha depende de:
 
 Um cliente ssh que responda no comando ssh
+
 sshpass para poder logar na máquina remota enviando a senha como argumento.
 
 ##### Um pouco de contexto
