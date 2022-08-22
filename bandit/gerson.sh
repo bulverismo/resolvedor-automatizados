@@ -7,7 +7,7 @@ DEBUG_AGRESSIVO="${2:-false}"
     set -x 
 }
 
-if ! sshpass -v
+if ! sshpass -v &>/dev/null
 then
     echo Não tem sshpass && exit 1
 fi
