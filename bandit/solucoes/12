@@ -1,0 +1,28 @@
+ARQUIVO="$(mktemp -d)"
+cd "$ARQUIVO"
+pwd
+cp ~/data.txt .
+ls -lha
+file data.txt
+xxd -r data.txt > file1.gz
+file file1.gz
+gzip -l file1.gz
+gzip -d file1.gz
+file file1
+bzip2 -d file1
+file file1.out
+mv file1.out file1.out.gz
+gzip -d file1.out.gz
+file file1.out
+tar -xf file1.out
+file data5.bin
+tar -xf data5.bin
+file data6.bin
+bzip2 -d data6.bin
+file data6.bin.out
+tar -xf data6.bin.out
+file data8.bin
+mv data8.bin data8.bin.gz
+gzip -d data8.bin.gz
+file data8.bin
+cat data8.bin | cut -d ' ' -f 4

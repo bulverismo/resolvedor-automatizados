@@ -1,0 +1,19 @@
+. utils.sh
+
+senha="$(cat senhas/16)"
+
+mkdir artefatos/16 2>/dev/null
+ARQUIVO="artefatos/16/sshkey.private.bandit17"
+
+comandos='echo "cluFn7wTiGryunymYOu4RcffSxQluehd" | openssl s_client -ign_eof -connect "localhost:31790" 2>/dev/null | sed -n "/.*BEGIN RSA PRIVATE KEY.*/,/.*END RSA PRIVATE KEY.*/p"'
+
+executador "$senha" "16" "false" "$comandos" "$ARQUIVO"
+
+chmod 600 "$ARQUIVO"
+grep -q bandit17 ~/.ssh/config || echo '
+Host bandit.labs.overthewire.org
+    HostName bandit.labs.overthewire.org
+    IdentityFile ~/overthewire/bandit/artefatos/16/sshkey.private.bandit17
+    Port 2220
+    User bandit17
+' >> ~/.ssh/config

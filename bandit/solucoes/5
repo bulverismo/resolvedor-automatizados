@@ -1,0 +1,3 @@
+cd inhere
+caminho=$(find . -readable -size 1033c -not -executable)
+head -n1 $caminho

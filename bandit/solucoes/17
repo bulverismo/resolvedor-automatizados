@@ -1,0 +1,1 @@
+diff passwords.old passwords.new | tail -n1 | cut -d ' ' -f 2

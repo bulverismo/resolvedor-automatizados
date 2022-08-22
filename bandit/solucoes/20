@@ -1,0 +1,5 @@
+ARQUIVO="$(mktemp)"
+cat /etc/bandit_pass/bandit20 > "$ARQUIVO"
+nc -lp 30003 < "$ARQUIVO" &
+sleep 1
+./suconnect 30003 

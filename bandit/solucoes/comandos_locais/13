@@ -1,0 +1,15 @@
+. utils.sh
+mkdir artefatos/13 
+ARQUIVO="artefatos/13/sshkey.private.bandit14"
+
+executador "$(cat senhas/13)" "13" "false" "cat sshkey.private" "$ARQUIVO" 
+
+chmod 600 "$ARQUIVO"
+
+grep bandit14 ~/.ssh/config || echo '
+Host bandit.labs.overthewire.org
+    HostName bandit.labs.overthewire.org
+    IdentityFile ~/overthewire/bandit/artefatos/13/sshkey.private.bandit14
+    Port 2220
+    User bandit14
+' >> ~/.ssh/config

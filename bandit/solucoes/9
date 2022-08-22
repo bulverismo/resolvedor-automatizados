@@ -1,0 +1,1 @@
+strings data.txt | grep "=" | grep '^&========' | cut -d ' ' -f 2
